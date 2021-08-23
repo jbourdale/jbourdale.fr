@@ -1,0 +1,24 @@
+.header {
+    position: absolute;
+    top: 0;
+    right: 32px;
+    width: 30%;
+
+    display: flex;
+    z-index: 999;
+}
+
+.header ul {
+    display: flex;
+    flex-direction: row;
+
+    flex: 1;
+}
+
+.header ul li {
+    font-family: 'Abel', sans-serif;
+    flex: 1;
+    list-style: none;
+    color: white;
+    text-align: right;
+}
