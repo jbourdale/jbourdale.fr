@@ -1,11 +1,24 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 32px;
-    width: 30%;
+    width: 100%;
 
     display: flex;
     z-index: 999;
+
+    background-color: transparent;
+    font-size: 16px;
+    padding: 3rem;
+
+    transition: background-color 0.7s ease,
+        padding 0.3s ease,
+        font-size 0.2s ease;
+}
+
+.header.detached {
+    padding: 0.8rem 3rem;
+    background-color: #050505;
+    font-size: 20px;
 }
 
 .header ul {
@@ -13,12 +26,66 @@
     flex-direction: row;
 
     flex: 1;
+    margin: 0;
+    padding: 0;
 }
 
 .header ul li {
-    font-family: 'Abel', sans-serif;
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     list-style: none;
-    color: white;
-    text-align: right;
+
+    font-family: 'Abel', sans-serif;
+    color: #fff;
+
+    transition: font-size 0.3s ease;
+}
+
+.header ul li:hover {
+    cursor: pointer;
+    font-size: 26px;
+}
+
+.header .logo-container {
+    flex: 1;
+}
+
+.header img {
+    height: 6rem;
+}
+
+.header ul li a {
+    margin: 0 2rem;
+}
+
+.header ul li a img {
+    height: 2rem;
+    transition: height 0.3s ease;
+}
+
+.header ul li a img:hover {
+    height: 2.5rem;
+}
+
+.header ul li div.contact-btn {
+    background-color: #fff;
+    color: black;
+    padding: 1rem;
+    text-transform: uppercase;
+
+    border-radius: 2px;
+    transition: background-color 0.3s ease, font-size 0.3s ease;
+}
+
+.header ul li div.contact-btn:hover {
+    background-color: #ccc;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.header.detached .contact-btn:hover {
+    font-size: 26px;
 }
