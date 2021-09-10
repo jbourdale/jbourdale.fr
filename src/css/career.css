@@ -1,5 +1,146 @@
 .page.career {
-    background-color: #0f0f0f;
+    background-color: black;
     padding: 3rem;
-    min-height: 200vh;
+    flex-direction: column;
+}
+
+#career-title {
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+    font-size: 140px;
+    letter-spacing: 2.3rem;
+    margin: 8px 0;
+    text-align: center;
+}
+
+#career-title:not(.tracking-in-expand-fwd-bottom) {
+    visibility: hidden;
+}
+
+.year {
+    position: relative;
+    min-height: 100vh;
+}
+
+.year::before {
+    content: '';
+    position: absolute;
+    height: calc(100% - 40px);
+    width: 1px;
+    background-color: #00df9a;
+    margin-top: 90px;
+    left: 54px;
+}
+
+.year-title {
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+    font-size: 56px;
+}
+
+.year-event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8rem 6rem;
+}
+
+.year-event.rtl {
+    flex-direction: row-reverse;
+}
+
+.year-event.rtl:not(.slide-in-right) {
+    visibility: hidden;
+}
+
+.year-event:not(.rtl, .slide-in-left) {
+    visibility: hidden;
+}
+
+.year-content div.screen {
+    flex: 1;
+    background: linear-gradient(45deg, #f9638a, #8558b0);
+    color: #000;
+    border-radius: 16px;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.year-content div.screen img {
+    width: 80%;
+    margin: 3rem 0 0 0;
+}
+
+.year-content .description {
+    color: #fff;
+    margin-left: 8rem;
+    flex: 2;
+}
+
+.year-content .year-event.rtl .description {
+    margin-left: 0;
+    margin-right: 8rem;
+}
+
+.year-content .description h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+    margin: 4px 0;
+    letter-spacing: .1rem;
+}
+
+.year-content .description h4 {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+    color: #00df9a;
+    margin: 4px 0;
+}
+
+.year-content .description a {
+    color: #00df9a;
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+}
+
+.year-content .description p {
+    margin: 8px 0;
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+}
+
+.year-content .description a:hover {
+    color: #009365;
+}
+
+.year-content .description ul li {
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+}
+
+.year-content .description .category {
+    font-size: 24px;
+}
+
+
+.year-content .description .categories {
+    list-style-type: none;
+    padding: 0;
+}
+
+.illustrations {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+
+.tools {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2rem;
 }
