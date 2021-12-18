@@ -1,0 +1,22 @@
+{
+  "name": "jbourdale.fr",
+  "version": "1.0.0",
+  "source": "./index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbourdale/jbourdale.fr.git"
+  },
+  "author": "Jules Bourdalé <jules.bourdale@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbourdale/jbourdale.fr/issues"
+  },
+  "homepage": "https://github.com/jbourdale/jbourdale.fr#readme",
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  }
+}

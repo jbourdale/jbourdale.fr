@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-#career-title:not(.tracking-in-expand-fwd-bottom) {
+#career-title:not(.slide-in-left) {
     visibility: hidden;
 }
 
