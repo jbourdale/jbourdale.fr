@@ -1,0 +1,50 @@
+name: Release contact cloud function on GCP
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./lambda/contact
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Setup Node 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+          cache-dependency-path: lambda/contact/yarn.lock
+      
+      - run: yarn install --frozen-lockfile
+      
+      - run: yarn build
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Terraform Format
+        run: terraform fmt -check
+        working-directory: ./terraform
+      
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./terraform
+
+      - name: Terraform Validate
+        run: terraform validate -no-color
+        working-directory: ./terraform
+
+      - name: Terraform Plan
+        run: terraform plan -no-color
+        working-directory: ./terraform
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -var="sendinblue_api_key=${{ secrets.SENDINBLUE_API_KEY }}"
+        working-directory: ./terraform

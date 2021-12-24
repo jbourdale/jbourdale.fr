@@ -1,0 +1,46 @@
+name: Build static site and lambda
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build_static:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./static
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+          cache: 'yarn'
+          cache-dependency-path: static/yarn.lock
+
+      - run: yarn install --frozen-lockfile
+
+      - run: yarn build
+
+  build_contact_lambda:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./lambda/contact
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup Node 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: 16.x
+        cache: 'yarn'
+        cache-dependency-path: lambda/contact/yarn.lock
+    
+    - run: yarn install --frozen-lockfile
+    
+    - run: yarn build
