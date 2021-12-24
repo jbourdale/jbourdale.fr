@@ -23,6 +23,10 @@ export const contact = async (req, res) => {
   }
 
   const { from, content } = payload;
-  await sendMail(from, content)
-  res.status(204).end()
+  try {
+    await sendMail(from, content)
+    res.status(204).end()
+  } catch(err) {
+    res.status(500).send(err)
+  }
 }

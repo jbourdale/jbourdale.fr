@@ -1,1 +1,1 @@
-console.log(process.env.MAIL_BACKEND)
+console.log(process.env.MAIL_BACKEND_URL)
