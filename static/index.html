@@ -3,12 +3,15 @@
 <html>
 	<head>
 		<title>Jules Bourdalé</title>
+		<meta charset="UTF-8">
+
 		<link rel="stylesheet" href="css/main.css"/>
 		<link rel="stylesheet" href="css/animations.css"/>
 		<link rel="stylesheet" href="css/header.css"/>
 		<link rel="stylesheet" href="css/introduction.css"/>
 		<link rel="stylesheet" href="css/career.css"/>
 		<link rel="stylesheet" href="css/contact.css"/>
+		<link rel="stylesheet" href="css/footer.css"/>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -303,16 +306,23 @@
 				<div class="contact-item right">
 					<div class="contact-form">
 						<div class="contact-form-group">
-							<input class="contact-form-control" placeholder="EMAIL">
+							<input id="mail-from" class="contact-form-control" placeholder="EMAIL">
 						</div>
 						<div class="contact-form-group message">
-							<textarea class="contact-form-control" placeholder="MESSAGE"></textarea>
+							<textarea id="mail-content" class="contact-form-control" placeholder="MESSAGE"></textarea>
 						</div>
 						<div class="contact-form-group buttons">
-							<button class="contact-form-button">SEND</button>
+							<button id="send-mail-btn" class="contact-form-button">SEND</button>
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-content">
+				<p>Made with native HTML, CSS, JS and ♡ by Jules Bourdalé</p>
+				<p>Hosted on cloudflare pages, contact form uses google cloud functions</p>
+				<p>© Copyright Jules Bourdalé</p>
 			</div>
 		</div>
 
