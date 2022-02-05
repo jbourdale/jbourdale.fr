@@ -99,20 +99,30 @@
     border-bottom-color: #ddd;
 }
 
+.contact-form-control.is-invalid {
+    border-bottom: 1px solid #ea1d6f;  
+}
+.contact-form-control.is-invalid::placeholder {
+    color: #ea1d6f;
+}
+
 .contact-form-button {
     background: none;
     border: none;
     color: #ea1d6f;
     font-size: 24px;
-    cursor: pointer;
     outline: none;
+}
+
+.contact-form-button:not(.disabled) {
+    cursor: pointer;
 }
 
 .contact-form-button.hide {
     display: none;
 }
 
-.contact-form-button:hover {
+.contact-form-button:not(.disabled):hover {
     color: #b9134f;
 }
 

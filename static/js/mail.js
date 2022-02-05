@@ -27,12 +27,30 @@ const sendMail = async (mail) => {
 /** 
  * Reset errors feedback
  */
-formEls.from.addEventListener('change', () => {
-  formEls.from.classList.remove('is-invalid')
+
+const checkFormInput = (el) => {
+  const { value } = el
+
+  formEls.send.classList.remove('disabled')
+  formEls.send.disabled = false
+  
+  const valid = !!value
+  if (valid) {
+    el.classList.remove('is-invalid')
+    return
+  }
+
+  el.classList.add('is-invalid')
+  formEls.send.disabled = true
+  formEls.send.classList.add('disabled')
+}
+
+formEls.from.addEventListener('input', () => {
+  checkFormInput(formEls.from)
 })
 
-formEls.content.addEventListener('change', () => {
-  formEls.content.classList.remove('is-invalid')
+formEls.content.addEventListener('input', () => {
+  checkFormInput(formEls.content)
 })
 
 formEls.send.addEventListener('click', async () => {
@@ -95,4 +113,6 @@ const resetForm = () => {
   formEls.content.value = ''
   formEls.send.classList.remove('hide')
   formEls.loader.classList.add('hide')
+  formEls.content.classList.add('is-invalid')
+  formEls.from.classList.add('is-invalid')
 }
