@@ -1,9 +1,7 @@
 .introduction {
     background: linear-gradient(-45deg, #050505, #141a20 100%);
 
-    width:100vw;
     height: 100vh;
-    min-width:100vw;
     min-height: 100vh;
 }
 

@@ -40,13 +40,10 @@
 
     font-family: 'Abel', sans-serif;
     color: #fff;
-
-    transition: font-size 0.3s ease;
 }
 
 .header ul li:hover {
     cursor: pointer;
-    font-size: 26px;
 }
 
 .header .logo-container {
@@ -67,10 +64,6 @@
     transition: height 0.3s ease;
 }
 
-.header ul li a img:hover {
-    height: 2.5rem;
-}
-
 .header ul li div.contact-btn {
     background-color: #fff;
     color: black;
@@ -78,15 +71,19 @@
     text-transform: uppercase;
 
     border-radius: 2px;
-    transition: background-color 0.3s ease, font-size 0.3s ease;
+    transition: background-color, color 0.3s ease;
 }
 
 .header ul li div.contact-btn:hover {
-    background-color: #ccc;
-    font-size: 28px;
-    font-weight: bold;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #00df9a;
 }
 
-.header.detached .contact-btn:hover {
-    font-size: 26px;
+.header ul li.cv-link {
+    transition: color 0.3s ease;
+}
+
+.header ul li.cv-link:hover {
+    color: #00df9a;
 }

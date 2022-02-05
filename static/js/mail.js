@@ -34,6 +34,11 @@ const checkFormInput = (el) => {
   formEls.send.classList.remove('disabled')
   formEls.send.disabled = false
   
+  if (el.classList.includes('reseted')) {
+    el.classList.remove('is-invalid')
+    return
+  }
+  
   const valid = !!value
   if (valid) {
     el.classList.remove('is-invalid')
@@ -111,8 +116,10 @@ const showFeedbackError = async () => {
 const resetForm = () => {
   formEls.from.value = ''
   formEls.content.value = ''
+  
   formEls.send.classList.remove('hide')
   formEls.loader.classList.add('hide')
-  formEls.content.classList.add('is-invalid')
-  formEls.from.classList.add('is-invalid')
+  
+  formEls.content.classList.add('reseted')
+  formEls.from.classList.add('reseted')
 }
