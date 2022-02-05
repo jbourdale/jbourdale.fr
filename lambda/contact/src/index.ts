@@ -14,7 +14,12 @@ const schema = yup.object().shape({
 export const contact = async (req, res) => {
   let payload: RequestBody;
 
-  console.log("req", req.body);
+  setCorsHeader(res);
+  if (req.method === 'OPTIONS') {
+    respondCorsHeaders(res)    
+    return res.status(204).send('');
+  }
+
   try {
     payload = await schema.validate(req.body);
   } catch (err) {
@@ -29,4 +34,14 @@ export const contact = async (req, res) => {
   } catch(err) {
     res.status(500).send(err)
   }
+}
+
+const respondCorsHeaders = (res) => {
+  res.set('Access-Control-Allow-Methods', 'POST');
+  res.set('Access-Control-Allow-Headers', 'Content-Type');
+  res.set('Access-Control-Max-Age', '3600');
+}
+
+const setCorsHeader = (res) => {
+  res.set('Access-Control-Allow-Origin', '*');
 }

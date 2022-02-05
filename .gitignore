@@ -2,3 +2,4 @@ static/dist
 static/node_modules
 static/.parcel-cache
 .DS_Store
+lambda/contact/terraform/.terraform

@@ -1,4 +1,4 @@
-const backendUrl = process.env.MAIL_BACKEND_URL || 'https://europe-west3-regal-ceiling-161616.cloudfunctions.net/contact-jbourdale/contact'
+const backendUrl = process.env.MAIL_BACKEND_URL || 'http://europe-west3-regal-ceiling-161616.cloudfunctions.net/contact-jbourdale/contact'
 
 const sendMail = async (mail) => {
     const response = await fetch(backendUrl, {
@@ -8,13 +8,20 @@ const sendMail = async (mail) => {
         },
         body: JSON.stringify(mail)
       });
-      return response.json(); // parses JSON response into native JavaScript objects
+      return response.status === 204;
 }
 
 document.getElementById('send-mail-btn').addEventListener('click', async () => {
-    const from = document.getElementById('mail-from').value
-    const content = document.getElementById('mail-content').value
+    const fromEl = document.getElementById('mail-from')
+    const contentEl = document.getElementById('mail-content')
 
-    const resp = await sendMail({ from, content })
-    console.log('resp : ', resp)
+    if (!fromEl.value)
+      fromEl.classList.add('is-invalid')    
+    if (!contentEl.value)
+      contentEl.classList.add('is-invalid')
+
+    const success = await sendMail({ from: fromEl.value, content: contentEl.value })
+    if (!success) {
+      alert('Failed to send mail')
+    }
 })
