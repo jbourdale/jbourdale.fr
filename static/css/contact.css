@@ -108,6 +108,10 @@
     outline: none;
 }
 
+.contact-form-button.hide {
+    display: none;
+}
+
 .contact-form-button:hover {
     color: #b9134f;
 }
@@ -141,5 +145,123 @@
 
     .contact-item {
         padding: 0;
+    }
+}
+
+.mail-feedback {
+    color: #ea1d6f;
+    display: flex;
+    flex-direction: column;
+    align-items: end
+}
+
+.mail-feedback.hide {
+    display: none;
+}
+
+/** Checkbox success mail feedback */
+.checkmark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin-right: 24px;
+    box-shadow: inset 0px 0px 0px #ea1d6f;
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.checkmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #ea1d6f;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.checkmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes scale {
+    0%, 100% {
+        transform: none;
+    }
+    50% {
+        transform: scale3d(1.1, 1.1, 1);
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #ea1d6f;
+    }
+}
+
+/** Cross error mail feedback */
+.crossmark-circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: #ea1d6f;
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+  
+.crossmark {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #ea1d6f;
+    stroke-miterlimit: 10;
+    margin-right: 24px;
+    box-shadow: inset 0px 0px 0px #ea1d6f;
+    animation: fillred .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both;
+}
+
+.crossmark-check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+.cross-path {
+    stroke: #ffffff;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    transform-origin: 50% 50% 0;
+}
+.cross-path-right {
+    animation: 0.3s ease 0.8s normal forwards 1 running stroke;
+}
+.cross-path-left {
+    animation: 1s ease 0.8s normal forwards 1 running stroke;
+}
+@keyframes fillred {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px #ea1d6f;
+    }
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0;
     }
 }

@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/introduction.css"/>
 		<link rel="stylesheet" href="css/career.css"/>
 		<link rel="stylesheet" href="css/contact.css"/>
+		<link rel="stylesheet" href="css/loader.css"/>
 		<link rel="stylesheet" href="css/footer.css"/>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -313,6 +314,28 @@
 						</div>
 						<div class="contact-form-group buttons">
 							<button id="send-mail-btn" class="contact-form-button">SEND</button>
+							
+							<div id="mail-loader" class="loader hide">
+								<div></div>
+								<div></div>
+								<div></div>
+								<div></div>
+							</div>
+
+							<div id="mail-feedback-success" class="mail-feedback success hide">
+								<svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+									<circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+									<path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+								</svg>
+							</div>
+
+							<div id="mail-feedback-error" class="mail-feedback error hide">
+								<svg class="crossmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+									<circle class="crossmark-circle" cx="26" cy="26" r="25" fill="none"/>
+									<path class="cross-path cross-path-right" fill="none" d="M16,16 l20,20" />
+									<path class="cross-path cross-path-left" fill="none" d="M16,36 l20,-20" />
+								</svg>								   
+							</div>
 						</div>
 					</div>
 				</div>
